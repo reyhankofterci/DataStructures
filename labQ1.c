@@ -8,13 +8,13 @@ entered from the keyboard */
 
 
 
-// Düðüm yapýsý
+// DÃ¼Ã°Ã¼m yapÃ½sÃ½
 struct Node {
     int value;
     struct Node* next;
 };
 
-// Yeni bir düðüm oluþturur
+// Yeni bir dÃ¼Ã°Ã¼m oluÃ¾turur
 struct Node* newNode(int value) {
     struct Node* node = (struct Node*)malloc(sizeof(struct Node));
     node->value = value;
@@ -22,7 +22,7 @@ struct Node* newNode(int value) {
     return node;
 }
 
-// listenin baþýna tek sayýlarý ,listenin sonuna  çift sayýlarý ekleyen fonksiyon
+// listenin baÃ¾Ã½na tek sayÃ½larÃ½ ,listenin sonuna  Ã§ift sayÃ½larÃ½ ekleyen fonksiyon
 void ekleTekCiftListeye(struct Node** head, int value)
 {
     struct Node* newNode = NULL;
@@ -31,14 +31,14 @@ void ekleTekCiftListeye(struct Node** head, int value)
     newNode->next = NULL;
 
     if (value % 2 == 1)
-    { // Tek sayý ise
+    { // Tek sayÃ½ ise
         newNode->next = *head;
         *head = newNode;
     }
     else
-    { // Çift sayý ise
+    { // Ã‡ift sayÃ½ ise
             if (*head == NULL)
-            { // Eðer liste boþsa
+            { // EÃ°er liste boÃ¾sa
             *head = newNode;
             }
             else
@@ -53,7 +53,7 @@ void ekleTekCiftListeye(struct Node** head, int value)
      }
 }
 
-// Liste içeriðini yazdýran fonksiyon
+// Liste iÃ§eriÃ°ini yazdÃ½ran fonksiyon
 void printList(struct Node* head) {
     printf("List: ");
     while (head != NULL) {
@@ -78,7 +78,7 @@ int main() {
 
     printList(liste);
 
-    // Belleði temizle.
+    // BelleÃ°i temizle.
     while (liste != NULL) {
         struct Node* temp = liste;
         liste = liste->next;
