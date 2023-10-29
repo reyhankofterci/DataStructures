@@ -16,13 +16,13 @@ struct Ogrenci {
 };
 
 void ogrenciEkle(struct Ogrenci *ogrenciListesi, int *ogrenciSayisi, const char *ad, const char *soyad, int numara) {
-    if (*ogrenciSayisi < 50) { // Maksimum 50 öðrenci eklenebilir
+    if (*ogrenciSayisi < 50) { // Maksimum 50 Ã¶Ã°renci eklenebilir
         strcpy(ogrenciListesi[*ogrenciSayisi].ad, ad);
         strcpy(ogrenciListesi[*ogrenciSayisi].soyad, soyad);
         ogrenciListesi[*ogrenciSayisi].numara = numara;
         (*ogrenciSayisi)++;
     } else {
-        printf("Maksimum öðrenci sayýsýna ulaþýldý!\n");
+        printf("Maksimum Ã¶Ã°renci sayÃ½sÃ½na ulaÃ¾Ã½ldÃ½!\n");
     }
 }
 
@@ -37,7 +37,7 @@ void ogrenciAra(const struct Ogrenci *ogrenciListesi, int ogrenciSayisi, const c
     }
 
     if (!bulunan) {
-        printf("Öðrenci bulunamadý.\n");
+        printf("Ã–Ã°renci bulunamadÃ½.\n");
     }
 }
 
@@ -45,13 +45,13 @@ int main() {
     struct Ogrenci ogrenciListesi[50];
     int ogrenciSayisi = 0;
 
-    // Öðrenci ekleme kýsmý
+    // Ã–Ã°renci ekleme kÃ½smÃ½
     int secim;
     char ad[50], soyad[50];
     int numara;
 
     while (1) {
-        printf("1. Öðrenci Ekle\n2. Öðrenci Ara\n3. Çýkýþ\nSeçim: ");
+        printf("1. Ã–Ã°renci Ekle\n2. Ã–Ã°renci Ara\n3. Ã‡Ã½kÃ½Ã¾\nSeÃ§im: ");
         scanf("%d", &secim);
 
         if (secim == 1) {
@@ -63,13 +63,13 @@ int main() {
             scanf("%d", &numara);
             ogrenciEkle(ogrenciListesi, &ogrenciSayisi, ad, soyad, numara);
         } else if (secim == 2) {
-            printf("Aranan Öðrenci Adý: ");
+            printf("Aranan Ã–Ã°renci AdÃ½: ");
             scanf("%s", ad);
             ogrenciAra(ogrenciListesi, ogrenciSayisi, ad);
         } else if (secim == 3) {
             break;
         } else {
-            printf("Geçersiz seçim!\n");
+            printf("GeÃ§ersiz seÃ§im!\n");
         }
     }
 
