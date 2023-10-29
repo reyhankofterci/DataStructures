@@ -8,13 +8,13 @@ smallest and prints them on the screen.*/
 
 
 
-// Düğüm yapısı
+// DÃ¼Ã°Ã¼m yapÃ½sÃ½
 struct Node {
     int data;
     struct Node* next;
 };
 
-// Yeni bir düğüm oluşturur
+// Yeni bir dÃ¼Ã°Ã¼m oluÃ¾turur
 struct Node* newNode(int data) {
     struct Node* node = (struct Node*)malloc(sizeof(struct Node));
     node->data = data;
@@ -22,7 +22,7 @@ struct Node* newNode(int data) {
     return node;
 }
 
-// Liste içeriğini yazdıran fonksiyon
+// Liste iÃ§eriÃ°ini yazdÃ½ran fonksiyon
 void printList(struct Node* head) {
     struct Node* current = head;
     while (current != NULL) {
@@ -35,7 +35,7 @@ void printList(struct Node* head) {
     printf("\n");
 }
 
-// Düğümü sıralı bir şekilde liste içine ekleyen fonksiyon
+// DÃ¼Ã°Ã¼mÃ¼ sÃ½ralÃ½ bir Ã¾ekilde liste iÃ§ine ekleyen fonksiyon
 void siraliEkle(struct Node** head, int value) {
     struct Node* new_node = newNode(value);
 
@@ -57,17 +57,17 @@ int main() {
     int sayi;
     int i;
 
-    // Rastgele 100 sayıyı liste içine ekle
+    // Rastgele 100 sayÃ½yÃ½ liste iÃ§ine ekle
     for (i = 0; i < 100; i++) {
-        sayi = rand() % 100; // 0 ile 999 arasında rastgele bir sayı üretir
+        sayi = rand() % 100; // 0 ile 999 arasÃ½nda rastgele bir sayÃ½ Ã¼retir
         siraliEkle(&list, sayi);
     }
 
-    // Sıralanmış liste içeriğini ekrana yazdırır
+    // SÃ½ralanmÃ½Ã¾ liste iÃ§eriÃ°ini ekrana yazdÃ½rÃ½r
     printf(":");
     printList(list);
 
-    // Belleği temizle
+    // BelleÃ°i temizle
     while (list != NULL) {
         struct Node* temp = list;
         list = list->next;
