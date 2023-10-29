@@ -5,13 +5,13 @@
 //Write the function that deletes the next node
 // from the node with the searched student name in the list.
 
-// Öğrenci yapısı
+// Ã–Ã°renci yapÃ½sÃ½
 struct Ogrenci {
     char isim[50];
     struct Ogrenci* sonraki;
 };
 
-// Yeni öğrenci düğümü oluşturan fonksiyon
+// Yeni Ã¶Ã°renci dÃ¼Ã°Ã¼mÃ¼ oluÃ¾turan fonksiyon
 struct Ogrenci* ogrenciOlustur(const char* isim) {
     struct Ogrenci* ogrenci = (struct Ogrenci*)malloc(sizeof(struct Ogrenci));
     strcpy(ogrenci->isim, isim);
@@ -19,14 +19,14 @@ struct Ogrenci* ogrenciOlustur(const char* isim) {
     return ogrenci;
 }
 
-// Yeni öğrenci düğümünü listenin başına ekleyen fonksiyon
+// Yeni Ã¶Ã°renci dÃ¼Ã°Ã¼mÃ¼nÃ¼ listenin baÃ¾Ã½na ekleyen fonksiyon
 struct Ogrenci* ogrenciEkle(struct Ogrenci* baslangic, const char* isim) {
     struct Ogrenci* yeniOgrenci = ogrenciOlustur(isim);
     yeniOgrenci->sonraki = baslangic;
     return yeniOgrenci;
 }
 
-// En uzun ismi ve uzunluğunu bulan fonksiyon
+// En uzun ismi ve uzunluÃ°unu bulan fonksiyon
 void enUzunIsimliOgrenciyiBul(const struct Ogrenci* baslangic) {
     const struct Ogrenci* gecici = baslangic;
     const char* enUzunIsim = NULL;
@@ -45,7 +45,7 @@ void enUzunIsimliOgrenciyiBul(const struct Ogrenci* baslangic) {
         printf("En uzun isim: %s\n", enUzunIsim);
         printf("Uzunluk: %zu \n", enUzunUzunluk);
     } else {
-        printf("Liste boş.\n");
+        printf("Liste boÃ¾.\n");
     }
 }
 
@@ -54,7 +54,7 @@ int main() {
     int secim;
 
     while (1) {
-        printf("1. İsim Ekle\n2. En Uzun İsimli Öğrenciyi Bul\n3. Çıkış\nSeçim: ");
+        printf("1. Ãsim Ekle\n2. En Uzun Ãsimli Ã–Ã°renciyi Bul\n3. Ã‡Ã½kÃ½Ã¾\nSeÃ§im: ");
         scanf("%d", &secim);
 
         switch (secim) {
@@ -73,7 +73,7 @@ int main() {
                 exit(0);
 
             default:
-                printf("Geçersiz seçim!\n");
+                printf("GeÃ§ersiz seÃ§im!\n");
                 break;
         }
     }
