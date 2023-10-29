@@ -12,7 +12,7 @@ struct Ogrenci {
     struct Ogrenci *sonraki;
 };
 
-// Yeni öðrenci düðümü oluþturan fonksiyon
+// Yeni Ã¶ÄŸrenci dÃ¼ÄŸÃ¼mÃ¼ oluÅŸturan fonksiyon
 struct Ogrenci *ogrenciOlustur(const char *ad, const char *soyad, int numara) {
     struct Ogrenci *ogrenci = (struct Ogrenci *)malloc(sizeof(struct Ogrenci));
     strcpy(ogrenci->ad, ad);
@@ -29,14 +29,14 @@ void listeGoster(const struct Ogrenci *baslangic) {
         gecici = gecici->sonraki;
     }
 }
-// Öðrenci düðümlerini ekleme fonksiyonu
+// Ã–ÄŸrenci dÃ¼ÄŸÃ¼mlerini ekleme fonksiyonu
 struct Ogrenci *ogrenciEkle(struct Ogrenci *baslangic, const char *ad, const char *soyad, int numara) {
     struct Ogrenci *yeniOgrenci = ogrenciOlustur(ad, soyad, numara);
     yeniOgrenci->sonraki = baslangic;
     return yeniOgrenci;
 }
 
-// Verilen adý taþýyan öðrencinin bir sonraki düðümünü silen fonksiyon
+// Verilen adÄ± taÅŸÄ±yan Ã¶ÄŸrencinin bir sonraki dÃ¼ÄŸÃ¼mÃ¼nÃ¼ silen fonksiyon
 struct Ogrenci *ogrenciSil(struct Ogrenci *baslangic, const char *aranan_ad) {
     struct Ogrenci *gecici = baslangic;
     struct Ogrenci *onceki = NULL;
@@ -44,14 +44,14 @@ struct Ogrenci *ogrenciSil(struct Ogrenci *baslangic, const char *aranan_ad) {
     while (gecici != NULL) {
         if (strcmp(aranan_ad, gecici->ad) == 0) {
             if (onceki == NULL) {
-                // Baþlangýç düðümünü deðiþtir
+                // BaÅŸlangÄ±Ã§ dÃ¼ÄŸÃ¼mÃ¼nÃ¼ deÄŸiÅŸtir
                 baslangic = gecici->sonraki;
             } else {
-                // Önceki düðümün sonraki iþaretçisini güncelle
+                // Ã–nceki dÃ¼ÄŸÃ¼mÃ¼n sonraki iÅŸaretÃ§isini gÃ¼ncelle
                 onceki->sonraki = gecici->sonraki;
             }
-            free(gecici); // Belleði serbest býrak
-            printf("%s adlý öðrencinin sonraki düðümü silindi.\n", aranan_ad);
+            free(gecici); // BelleÄŸi serbest bÄ±rak
+            printf("%s adlÄ± Ã¶ÄŸrencinin sonraki dÃ¼ÄŸÃ¼mÃ¼ silindi.\n", aranan_ad);
             return baslangic;
         }
 
@@ -59,7 +59,7 @@ struct Ogrenci *ogrenciSil(struct Ogrenci *baslangic, const char *aranan_ad) {
         gecici = gecici->sonraki;
     }
 
-    printf("%s adlý öðrenci bulunamadý.\n", aranan_ad);
+    printf("%s adlÄ± Ã¶ÄŸrenci bulunamadÄ±.\n", aranan_ad);
     return baslangic;
 }
 
@@ -71,7 +71,7 @@ int main() {
     int secim;
 
     while (1) {
-        printf("1. Öðrenci Ekle\n2. Öðrenci Sil\n3. Liste Göster\n4. Çýkýþ\nSeçim: ");
+        printf("1. Ã–ÄŸrenci Ekle\n2. Ã–ÄŸrenci Sil\n3. Liste GÃ¶ster\n4. Ã‡Ä±kÄ±ÅŸ\nSeÃ§im: ");
         scanf("%d", &secim);
 
         switch (secim) {
@@ -86,13 +86,13 @@ int main() {
                 break;
 
             case 2:
-                printf("Silmek istediðiniz öðrencinin adýný girin: ");
+                printf("Silmek istediÄŸiniz Ã¶ÄŸrencinin adÄ±nÄ± girin: ");
                 scanf("%s", ad);
                 baslangic = ogrenciSil(baslangic, ad);
                 break;
 
             case 3:
-                printf("Öðrenci Listesi:\n");
+                printf("Ã–ÄŸrenci Listesi:\n");
                 listeGoster(baslangic);
                 break;
 
@@ -100,7 +100,7 @@ int main() {
                 exit(0);
 
             default:
-                printf("Geçersiz seçim!\n");
+                printf("GeÃ§ersiz seÃ§im!\n");
                 break;
         }
     }
