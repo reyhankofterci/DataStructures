@@ -3,10 +3,10 @@
 #include <string.h>
 
 
-//3 - Output : 54->58->62->65->71->73->……102
+//3 - Output : 54->58->62->65->71->73->â€¦â€¦102
 
 
-// Öğrenci bilgisi saklayacak düğüm yapısı
+// Ã–Ã°renci bilgisi saklayacak dÃ¼Ã°Ã¼m yapÃ½sÃ½
 struct Ogrenci {
     int numara;
     char isim[50];
@@ -14,7 +14,7 @@ struct Ogrenci {
     struct Ogrenci* sonraki;
 };
 
-// Yeni bir öğrenci düğümü oluşturan işlev
+// Yeni bir Ã¶Ã°renci dÃ¼Ã°Ã¼mÃ¼ oluÃ¾turan iÃ¾lev
 struct Ogrenci* yeniOgrenci(int numara, const char* isim, int yas) {
     struct Ogrenci* ogrenci = (struct Ogrenci*)malloc(sizeof(struct Ogrenci));
     ogrenci->numara = numara;
@@ -24,7 +24,7 @@ struct Ogrenci* yeniOgrenci(int numara, const char* isim, int yas) {
     return ogrenci;
 }
 
-// Öğrenci listesini ekrana yazdıran işlev
+// Ã–Ã°renci listesini ekrana yazdÃ½ran iÃ¾lev
 void ogrenciListesiniYazdir(struct Ogrenci* baslangic) {
     struct Ogrenci* current = baslangic;
     int sayac = 1;
@@ -44,7 +44,7 @@ int main() {
     int sayac = 1;
 
     while (1) {
-        printf("Öğrenci numarası, adı ve yaşını girin (bitirmek için -1 girin):\n");
+        printf("Ã–Ã°renci numarasÃ½, adÃ½ ve yaÃ¾Ã½nÃ½ girin (bitirmek iÃ§in -1 girin):\n");
         scanf("%d", &numara);
 
         if (numara == -1) {
@@ -64,10 +64,10 @@ int main() {
         }
     }
 
-    // Öğrenci listesini ekrana yazdır
+    // Ã–Ã°renci listesini ekrana yazdÃ½r
     ogrenciListesiniYazdir(baslangic);
 
-    // Belleği temizle
+    // BelleÃ°i temizle
     struct Ogrenci* current = baslangic;
     while (current != NULL) {
         struct Ogrenci* temp = current;
